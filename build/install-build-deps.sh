@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ROOT_DIR="$(dirname $(realpath $(dirname "${BASH_SOURCE[0]}")))"
+BUILDTOOLS_DIR="$ROOT_DIR/buildtools"
 
 function install_dep_from_tarfile {
   SRC_URL=$1
@@ -32,7 +33,14 @@ function install_dep_from_tarfile {
 # BODY
 
 # Install gn.
-~/depot_tools/download_from_google_storage --bucket chromium-gn --output $ROOT_DIR/buildtools/gn/linux64/gn 56e78e1927e12e5c122631b7f5a46768e527f1d2
+~/depot_tools/download_from_google_storage --bucket chromium-gn --output $ROOT_DIR/buildtools/gn 56e78e1927e12e5c122631b7f5a46768e527f1d2
+
+# Build and install ninja.
+mkdir -p $BUILDTOOLS_DIR/src
+cd $BUILDTOOLS_DIR/src
+git clone https://github.com/martine/ninja.git -b v1.5.1
+./ninja/bootstrap.py
+cp ./ninja/ninja $BUILDTOOLS_DIR
 
 # Download and extract PLY
 # Homepage:
