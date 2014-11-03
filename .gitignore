@@ -40,6 +40,7 @@ cscope.*
 Session.vim
 tags
 Thumbs.db
+/buildtools
 /mojo/public/tools/prebuilt
 /_out
 /out
