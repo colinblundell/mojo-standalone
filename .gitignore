@@ -46,4 +46,5 @@ Thumbs.db
 /out
 /out_*
 /third_party/jinja2
+/third_party/markupsafe
 /third_party/ply

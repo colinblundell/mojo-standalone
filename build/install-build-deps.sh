@@ -57,3 +57,10 @@ install_dep_from_tarfile "http://dabeaz.com/ply/ply-3.4.tar.gz" "ply"
 JINJA2_SRC_URL="https://pypi.python.org/packages/source/"
 JINJA2_SRC_URL+="J/Jinja2/Jinja2-2.7.1.tar.gz"
 install_dep_from_tarfile $JINJA2_SRC_URL 'jinja2'
+
+# Download and extract MarkupSafe
+# Homepage:
+# https://pypi.python.org/pypi/MarkupSafe
+MARKUPSAFE_SRC_URL="https://pypi.python.org/packages/source/"
+MARKUPSAFE_SRC_URL+="M/MarkupSafe/MarkupSafe-0.23.tar.gz"
+install_dep_from_tarfile $MARKUPSAFE_SRC_URL 'markupsafe'
