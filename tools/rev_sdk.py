@@ -8,6 +8,7 @@ import subprocess
 import sys
 
 dirs_to_clone = [
+  "examples",
   "mojo/public",
 ]
 
