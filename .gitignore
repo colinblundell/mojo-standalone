@@ -46,6 +46,7 @@ Thumbs.db
 /out
 /out_*
 /testing
+/third_party/gsutil
 /third_party/jinja2
 /third_party/markupsafe
 /third_party/ninja

@@ -10,9 +10,6 @@ import tempfile
 import zipfile
 
 current_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.insert(0, os.path.join(current_path, "..", "..", "..", "tools"))
-# pylint: disable=F0401
-import find_depot_tools
 
 if not sys.platform.startswith("linux"):
   print "Not supported for your platform"
@@ -38,12 +35,10 @@ basename = platform + ".zip"
 
 gs_path = "gs://mojo/shell/" + version + "/" + basename
 
-depot_tools_path = find_depot_tools.add_depot_tools_to_path()
-gsutil_exe = os.path.join(depot_tools_path, "third_party", "gsutil", "gsutil")
+gsutil_exe = os.path.join(current_path, "..", "..", "..", "third_party", "gsutil", "gsutil")
 
 with tempfile.NamedTemporaryFile() as temp_zip_file:
-  subprocess.check_call([gsutil_exe, "--bypass_prodaccess",
-                         "cp", gs_path, temp_zip_file.name])
+  subprocess.check_call([gsutil_exe, "cp", gs_path, temp_zip_file.name])
   with zipfile.ZipFile(temp_zip_file.name) as z:
     zi = z.getinfo("mojo_shell")
     mode = zi.external_attr >> 16L

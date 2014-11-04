@@ -50,7 +50,11 @@ git clone https://chromium.googlesource.com/external/googletest.git $GTEST_DIR
 cd $GTEST_DIR
 git checkout 4650552ff637bb44ecf7784060091cbed3252211 # from svn revision 692
 
-cd $ROOT_DIR
+# Install gsutil.
+cd $THIRD_PARTY_DIR
+curl --remote-name https://storage.googleapis.com/pub/gsutil.tar.gz
+tar xfz gsutil.tar.gz
+rm gsutil.tar.gz
 
 # Download and extract PLY.
 # Homepage:
