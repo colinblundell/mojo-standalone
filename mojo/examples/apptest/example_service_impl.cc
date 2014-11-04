@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "sample_apps/apptest/example_service_impl.h"
+#include "mojo/examples/apptest/example_service_impl.h"
 
 #include "mojo/public/cpp/utility/run_loop.h"
 

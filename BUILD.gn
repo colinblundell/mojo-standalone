@@ -7,6 +7,6 @@ group("root") {
   
   deps = [
     "//mojo/public",
-    "//sample_apps"
+    "//mojo/examples"
   ]
 }

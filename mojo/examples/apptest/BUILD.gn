@@ -14,7 +14,7 @@ group("apptest") {
 }
 
 shared_library("service") {
-  output_name = "example_service"
+  output_name = "mojo_example_service"
 
   sources = [
     "example_service_application.cc",
@@ -32,7 +32,7 @@ shared_library("service") {
 }
 
 shared_library("apptests") {
-  output_name = "example_apptests"
+  output_name = "mojo_example_apptests"
 
   testonly = true
 
@@ -46,12 +46,11 @@ shared_library("apptests") {
 
    deps = [
     ":bindings",
+    "//testing/gtest",
     "//mojo/public/c/system:for_shared_library",
     "//mojo/public/cpp/application:standalone",
-    "//mojo/public/cpp/application:test_support",
+    "//mojo/public/cpp/utility",
    ]
-
-   datadeps = [ ":service", ]
 }
 
 mojom("bindings") {
