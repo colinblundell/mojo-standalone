@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ROOT_DIR="$(dirname $(realpath $(dirname "${BASH_SOURCE[0]}")))"
+BUILD_DIR="$ROOT_DIR/build"
 BUILDTOOLS_DIR="$ROOT_DIR/buildtools"
 THIRD_PARTY_DIR="$ROOT_DIR/third_party/"
 GTEST_DIR="$ROOT_DIR/testing/gtest"
@@ -80,4 +81,4 @@ MARKUPSAFE_SRC_URL+="M/MarkupSafe/MarkupSafe-0.23.tar.gz"
 install_dep_from_tarfile $MARKUPSAFE_SRC_URL 'markupsafe'
 
 # Install the Mojo shell
-./download_mojo_shell.py
+$BUILD_DIR/download_mojo_shell.py
