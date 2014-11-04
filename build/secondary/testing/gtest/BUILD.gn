@@ -90,9 +90,9 @@ static_library("gtest") {
     "src/gtest-test-part.cc",
     "src/gtest-typed-test.cc",
     "src/gtest.cc",
-    "../multiprocess_func_list.cc",
-    "../multiprocess_func_list.h",
-    "../platform_test.h",
+    #"../multiprocess_func_list.cc",
+    #"../multiprocess_func_list.h",
+    #"../platform_test.h",
   ]
 
   if (is_mac) {
