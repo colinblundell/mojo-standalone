@@ -2,10 +2,11 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-group("root") {
+group("sample_apps") {
   testonly = true
-  
+
   deps = [
-    "//sample_apps"
+    "//sample_apps/apptest",
+    "//sample_apps/echo",
   ]
 }
