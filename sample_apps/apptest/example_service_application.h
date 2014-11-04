@@ -5,7 +5,7 @@
 #ifndef MOJO_EXAMPLES_TEST_EXAMPLE_SERVICE_APPLICATION_H_
 #define MOJO_EXAMPLES_TEST_EXAMPLE_SERVICE_APPLICATION_H_
 
-#include "apps/apptest/example_service_impl.h"
+#include "sample_apps/apptest/example_service_impl.h"
 #include "mojo/public/cpp/application/application_delegate.h"
 #include "mojo/public/cpp/application/interface_factory_impl.h"
 #include "mojo/public/cpp/system/macros.h"

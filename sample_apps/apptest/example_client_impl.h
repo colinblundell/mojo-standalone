@@ -5,7 +5,7 @@
 #ifndef MOJO_EXAMPLES_TEST_EXAMPLE_CLIENT_IMPL_H_
 #define MOJO_EXAMPLES_TEST_EXAMPLE_CLIENT_IMPL_H_
 
-#include "apps/apptest/example_service.mojom.h"
+#include "sample_apps/apptest/example_service.mojom.h"
 #include "mojo/public/cpp/system/macros.h"
 
 namespace mojo {

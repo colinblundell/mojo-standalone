@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "apps/apptest/example_client_application.h"
-#include "apps/apptest/example_client_impl.h"
-#include "apps/apptest/example_service.mojom.h"
+#include "sample_apps/apptest/example_client_application.h"
+#include "sample_apps/apptest/example_client_impl.h"
+#include "sample_apps/apptest/example_service.mojom.h"
 #include "mojo/public/cpp/application/application_impl.h"
 #include "mojo/public/cpp/application/application_test_base.h"
 #include "mojo/public/cpp/bindings/callback.h"
