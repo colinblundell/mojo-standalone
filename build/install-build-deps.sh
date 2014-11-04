@@ -2,6 +2,7 @@
 
 ROOT_DIR="$(dirname $(realpath $(dirname "${BASH_SOURCE[0]}")))"
 BUILDTOOLS_DIR="$ROOT_DIR/buildtools"
+GTEST_DIR="$ROOT_DIR/testing/gtest"
 
 function install_dep_from_tarfile {
   SRC_URL=$1
@@ -41,6 +42,14 @@ cd $BUILDTOOLS_DIR/src
 git clone https://github.com/martine/ninja.git -b v1.5.1
 ./ninja/bootstrap.py
 cp ./ninja/ninja $BUILDTOOLS_DIR
+
+# Install gtest at the correct revision.
+mkdir -p $GTEST_DIR
+https://chromium.googlesource.com//external/googletest.git $GTEST_DIR
+cd $GTEST_DIR
+git checkout 4650552ff637bb44ecf7784060091cbed3252211 # from svn revision 692
+
+cd $ROOT_DIR
 
 # Download and extract PLY
 # Homepage:
