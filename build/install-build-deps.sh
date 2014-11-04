@@ -85,6 +85,7 @@ mkdir -p $THIRD_PARTY_DIR/cython
 cd $THIRD_PARTY_DIR/cython
 curl --remote-name http://cython.org/release/Cython-0.20.2.zip
 unzip Cython-0.20.2.zip -d src
+rm -rf Cython-0.20.2.zip
 
 # Install the Mojo shell
 $BUILD_DIR/download_mojo_shell.py

@@ -16,9 +16,12 @@ if not sys.platform.startswith("linux"):
   print "Not supported for your platform"
   sys.exit(0)
 
-version_path = os.path.join(root_path, "mojo/public/VERSION")
-with open(version_path) as version_file:
-  version = version_file.read().strip()
+# TODO(blundell): Re-enable this logic once VERSION is restored in the Mojo 
+# repo. For now, hardcode to the last known Mojo shell version.
+#version_path = os.path.join(root_path, "mojo/public/VERSION")
+#with open(version_path) as version_file:
+#  version = version_file.read().strip()
+version = "e6ea280f719b61120da513e3ce0371b911f85f11"
 
 mojo_shell_path = os.path.join(root_path, "buildtools")
 stamp_path = os.path.join(mojo_shell_path, "MOJO_SHELL_VERSION")
