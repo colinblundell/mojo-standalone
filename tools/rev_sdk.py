@@ -8,7 +8,8 @@ import subprocess
 import sys
 
 dirs_to_clone = [
-  "examples",
+  "examples/apptest",
+  "examples/echo",
   "mojo/public",
 ]
 
@@ -23,9 +24,10 @@ def rev(source_dir, target_dir):
   src_commit = system(["git", "show-ref", "HEAD", "-s"]).strip()
 
   for d in dirs_to_clone:
-    print "removing directory %s" % d
     os.chdir(target_dir)
-    system(["git", "rm", "-r", d])
+    if os.path.exists(d):
+      print "removing directory %s" % d
+      system(["git", "rm", "-r", d])
     print "cloning directory %s" % d
     os.chdir(source_dir)
     files = system(["git", "ls-files", d])
