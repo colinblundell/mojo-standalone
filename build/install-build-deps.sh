@@ -45,7 +45,7 @@ cp ./ninja/ninja $BUILDTOOLS_DIR
 
 # Install gtest at the correct revision.
 mkdir -p $GTEST_DIR
-https://chromium.googlesource.com//external/googletest.git $GTEST_DIR
+git clone https://chromium.googlesource.com/external/googletest.git $GTEST_DIR
 cd $GTEST_DIR
 git checkout 4650552ff637bb44ecf7784060091cbed3252211 # from svn revision 692
 
