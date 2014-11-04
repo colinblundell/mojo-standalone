@@ -16,7 +16,7 @@ if not sys.platform.startswith("linux"):
   print "Not supported for your platform"
   sys.exit(0)
 
-version_path = os.path.join(root_path, "mojo/public/VERSION")
+version_path = os.path.join(root_path, "MOJO_SDK_VERSION")
 with open(version_path) as version_file:
   version = version_file.read().strip()
 
