@@ -1,0 +1,30 @@
+# Copyright 2014 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+source_set("bitmap_uploader") {
+  sources = [
+    "bitmap_uploader.cc",
+    "bitmap_uploader.h",
+  ]
+
+  public_deps = [
+    "//base",
+    "//mojo/public/c/gles2",
+    "//mojo/public/gles2:for_shared_library",
+    "//mojo/services/public/interfaces/gpu",
+    "//mojo/services/public/interfaces/surfaces",
+  ]
+  deps = [
+    "//mojo/application",
+    "//mojo/public/cpp/bindings:bindings",
+    "//mojo/public/gles2:for_shared_library",
+    "//mojo/public/interfaces/application",
+    "//mojo/services/public/cpp/surfaces",
+    "//mojo/services/public/cpp/view_manager",
+    "//mojo/services/public/interfaces/geometry",
+    "//mojo/services/public/interfaces/input_events:input_events",
+    "//mojo/services/public/interfaces/surfaces:surface_id",
+    "//mojo/services/public/interfaces/view_manager",
+  ]
+}

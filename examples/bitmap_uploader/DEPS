@@ -1,0 +1,6 @@
+include_rules = [
+  "+gpu/GLES2",
+  "+mojo/geometry",
+  "+third_party/khronos/GLES2",
+  "+third_party/skia/include",
+]
