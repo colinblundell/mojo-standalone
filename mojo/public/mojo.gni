@@ -2,11 +2,8 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-group("root") {
-  testonly = true
-  
-  deps = [
-    "//mojo/public",
-    "//sample_apps"
-  ]
+declare_args() {
+  # Whether to use a prebuilt mojo_shell binary instead of one built from
+  # source.
+  use_prebuilt_mojo_shell = false
 }
