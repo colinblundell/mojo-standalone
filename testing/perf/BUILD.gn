@@ -2,11 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-group("apps") {
-  testonly = true
-
-  deps = [
-    "//apps/apptest",
-    "//apps/echo",
-  ]
+source_set("perf") {
+  sources = [ "perf_test.cc" ]
+  deps = [ "//base" ]
 }
