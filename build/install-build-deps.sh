@@ -10,9 +10,8 @@ function install_dep_from_tarfile {
   PACKAGE_DIR=$2
   FILENAME="$(basename $SRC_URL)"
 
-  BUILD_DIR="$(basename $FILENAME .tar.gz)"
+  DOWNLOAD_DIR="$(basename $FILENAME .tar.gz)/$PACKAGE_DIR"
   INSTALL_DIR="$THIRD_PARTY_DIR/$PACKAGE_DIR"
-  OUT_DIR="$INSTALL_DIR/$BUILD_DIR/$PACKAGE_DIR"
   OLD_DIR="$THIRD_PARTY_DIR/$PACKAGE_DIR.old"
 
   mkdir -p "$INSTALL_DIR"
@@ -21,14 +20,13 @@ function install_dep_from_tarfile {
   curl --remote-name "$SRC_URL"
   tar xvzf "$FILENAME"
 
-  cd "$BUILD_DIR/$PACKAGE_DIR"
+  cd "$DOWNLOAD_DIR"
 
   # Replace with new directory
   cd "$ROOT_DIR"
   mv "$INSTALL_DIR" "$OLD_DIR"
-  mv "$OLD_DIR/$BUILD_DIR/$PACKAGE_DIR" "$INSTALL_DIR"
+  mv "$OLD_DIR/$DOWNLOAD_DIR" "$INSTALL_DIR"
   rm -fr "$OLD_DIR"
-
 }
 
 # BODY
@@ -80,3 +78,6 @@ install_dep_from_tarfile $JINJA2_SRC_URL 'jinja2'
 MARKUPSAFE_SRC_URL="https://pypi.python.org/packages/source/"
 MARKUPSAFE_SRC_URL+="M/MarkupSafe/MarkupSafe-0.23.tar.gz"
 install_dep_from_tarfile $MARKUPSAFE_SRC_URL 'markupsafe'
+
+# Install the Mojo shell
+./download_mojo_shell.py
