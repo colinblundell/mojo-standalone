@@ -23,7 +23,7 @@ $ ./run_example.sh apptest
 or build the entire public SDK:
 
 ```
-$ ./buildtools/gn out/Debug
+$ ./buildtools/gn gen out/Debug
 $ ./buildtools/ninja -C out/Debug
 ```
 If you have access to a Chromium checkout and a Mojo checkout, you can also try revving the SDK:
