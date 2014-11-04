@@ -61,6 +61,7 @@ class ApplicationImpl : public InterfaceImpl<Application> {
 
   // Returns any initial configuration arguments, passed by the Shell.
   const std::vector<std::string>& args() const { return args_; }
+  bool HasArg(const std::string& arg) const;
 
   // Establishes a new connection to an application. Caller does not own.
   ApplicationConnection* ConnectToApplication(const String& application_url);
@@ -82,6 +83,9 @@ class ApplicationImpl : public InterfaceImpl<Application> {
   // Application implementation.
   void Initialize(Array<String> args) override;
 
+  // Quits the main run loop for this application.
+  static void Terminate();
+
  private:
   class ShellPtrWatcher;
 
@@ -90,10 +94,7 @@ class ApplicationImpl : public InterfaceImpl<Application> {
   void OnShellError() {
     ClearConnections();
     Terminate();
-  };
-
-  // Quits the main run loop for this application.
-  static void Terminate();
+  }
 
   // Application implementation.
   void AcceptConnection(const String& requestor_url,

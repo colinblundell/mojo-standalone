@@ -4,14 +4,18 @@
 # found in the LICENSE file.
 
 import os
+import subprocess
 import sys
-from utils import commit
-from utils import mojo_root_dir
-from utils import system
 
 dirs_to_clone = [
   "mojo/public",
 ]
+
+def system(command):
+  return subprocess.check_output(command)
+
+def commit(message):
+  subprocess.call(['git', 'commit', '-a', '-m', message])
 
 def rev(source_dir, target_dir):
   os.chdir(source_dir)
@@ -37,8 +41,10 @@ def rev(source_dir, target_dir):
   system(["git", "add", "MOJO_SDK_VERSION"])
   commit("Update mojo sdk to rev " + src_commit)
 
-if len(sys.argv) != 1:
+if len(sys.argv) != 2:
   print "usage: rev_sdk.py <mojo source dir>"
   sys.exit(1)
 
-rev(sys.argv[1], root_dir)
+current_path = os.path.dirname(os.path.realpath(__file__))
+root_path = os.path.join(current_path, "..")
+rev(sys.argv[1], root_path)
