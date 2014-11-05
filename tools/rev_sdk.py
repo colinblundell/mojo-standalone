@@ -8,9 +8,15 @@ import subprocess
 import sys
 
 dirs_to_clone = [
+  # The core SDK.
+  "mojo/public",
+
+  # The interfaces of all the standard available services.
+  "mojo/services/public",
+
+  # Client code.
   "examples/apptest",
   "examples/echo",
-  "mojo/public",
 ]
 
 def system(command):
