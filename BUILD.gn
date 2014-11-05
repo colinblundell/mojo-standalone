@@ -6,7 +6,18 @@ group("root") {
   testonly = true
   
   deps = [
+    # SDK code.
     "//mojo/public",
+    "//mojo/services/public/interfaces/clipboard",
+    "//mojo/services/public/interfaces/content_handler",
+    "//mojo/services/public/interfaces/geometry",
+    "//mojo/services/public/interfaces/input_events",
+    "//mojo/services/public/interfaces/native_viewport",
+    "//mojo/services/public/interfaces/navigation",
+    "//mojo/services/public/interfaces/network",
+    "//mojo/services/public/interfaces/surfaces",
+
+    # Client code.
     "//examples/apptest",
     "//examples/echo"
   ]
